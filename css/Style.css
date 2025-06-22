@@ -67,28 +67,51 @@ body {
 
 /* Background video fills screen */
 .video-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 0;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .video-background video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 300px;
+}
+@media (max-width: 1024px) {
+  .video-background {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-background {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-background {
+    aspect-ratio: 9 / 16;
+  }
+
+  .video-background video {
+    min-height: 250px;
+  }
 }
 
 /* Rectangle flashcard */
 .rectangle-card {
     position: absolute;
-    top: 50%;
-    left: 35%;
+    top: 330px;
+    left: 400px;
     transform: translate(-50%, -50%);
-    width: 280px;
-    height: 160px;
+    /* width: 700px;
+    height: 400px; */
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -233,4 +256,158 @@ body {
     .video-background {
         height: 40vh;
     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --primary-dark: #0f0f23;
+  --secondary-dark: #1a1a2e;
+  --tertiary-dark: #16213e;
+  --royal-blue: #2563eb;
+  --electric-blue: #06b6d4;
+  --accent-primary: #00d9ff;
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --gradient-primary: linear-gradient(135deg, var(--royal-blue), var(--electric-blue));
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--primary-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  height: 100dvh;
+}
+
+/* Main content wrapper */
+.main-content {
+  position: relative;
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Responsive Video Background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  min-height: 300px;
+}
+
+/* Flashcard Rectangle */
+.rectangle-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 700px;
+  height: 400px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Circle Flashcard */
+.circle-card {
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 768px) {
+  .rectangle-card {
+    width: 90%;
+    height: auto;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .circle-card {
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
