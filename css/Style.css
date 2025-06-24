@@ -210,7 +210,6 @@ element. Here's a breakdown of what each property is doing: */
     }
 }
 
-
 /* -------------------------------------------------------------------- */
 /* Responsive Video Background */
 /* The commented out code block for `.video-background` is defining the styles for a video background
@@ -264,6 +263,10 @@ element. Here's a breakdown of what each property is doing: */
   flex-direction: column;
 }
 
+#contact-me{
+  color: white 
+}
+
 /* Social media icons  */
 .social-media {
   position: relative;
@@ -276,8 +279,11 @@ element. Here's a breakdown of what each property is doing: */
     bottom: 25px;
 }
 .hero-actions {
+  position: absolute;
+  display: block;
+  bottom: 20px;
       height: 55px;
-    width: 55px;
+    width: 500px;
 }
 .social-media a {
     width: 45px;
@@ -367,3 +373,13 @@ viewport width is equal to or less than 768 pixels. */
     to   { width: 15ch }
   }
 }
+
+
+
+/* .box1 {
+  height:900px
+  width 100px;
+  background-color: #00d9ff;
+  border: 2px solid black
+  z-index
+} */
