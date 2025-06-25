@@ -215,13 +215,12 @@ element. Here's a breakdown of what each property is doing: */
 /* The commented out code block for `.video-background` is defining the styles for a video background
 element. Here's a breakdown of what each property is doing: */
 .video-background {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100dvh;
-  overflow: hidden;
-  z-index: -1;
+  height: 100vh;
+  overflow: hidden;   
 }
 
 .video-background video {
@@ -284,6 +283,7 @@ element. Here's a breakdown of what each property is doing: */
   bottom: 20px;
       height: 55px;
     width: 500px;
+    z-index: -1;
 }
 .social-media a {
     width: 45px;
@@ -373,13 +373,17 @@ viewport width is equal to or less than 768 pixels. */
     to   { width: 15ch }
   }
 }
-
-
-
-/* .box1 {
-  height:900px
-  width 100px;
-  background-color: #00d9ff;
-  border: 2px solid black
-  z-index
-} */
+.spline-container {
+    width: 100%;
+    height: 500px;
+    /* border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    background: var(--gradient-secondary);
+    position: relative; */
+    margin-bottom: 2rem;
+}
+spline-viewer {
+    width: 100%;
+    height: 100%;
+}
